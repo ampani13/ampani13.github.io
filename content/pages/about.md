@@ -1,6 +1,6 @@
 Title: About
 Slug: about
-Subtitle: Data Engineer & AI Specialist with 8+ years of experience
+Subtitle: Data Engineer & AI Specialist with 9+ years of experience
 
 <div class="about-grid fade-in">
   <div class="about-avatar">
@@ -31,7 +31,7 @@ Subtitle: Data Engineer & AI Specialist with 8+ years of experience
       from data engineering and AI/ML to cognitive automation and full-stack intelligent solution design.
     </p>
     <p>
-      Over 8+ years I've helped organisations at Crisil, JP Morgan, Capgemini, ACL Digital, and Healthmeter
+      Over 9+ years I've helped organisations at Crisil, JP Morgan, Capgemini, ACL Digital, and Healthmeter
       build data pipelines, automate complex business processes, and deploy AI-powered applications that
       deliver real, measurable impact.
     </p>
