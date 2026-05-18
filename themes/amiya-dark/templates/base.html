@@ -4,7 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
-  <meta name="description" content="{{ SITESUBTITLE }}" />
+  <meta name="description" content="{% block description %}{{ SITESUBTITLE }}{% endblock %}" />
+  <meta name="author" content="{{ AUTHOR }}" />
+  <meta name="keywords" content="Amiya Pani, Data Engineer, AI Specialist, Python, GenAI, Machine Learning, ETL, Databricks, Mumbai" />
+
+  <!-- Open Graph / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}{{ self.description() }}{% endblock %}" />
+  <meta property="og:url" content="{% block og_url %}https://amiyapani.com{% endblock %}" />
+  <meta property="og:site_name" content="{{ SITENAME }}" />
+  <meta property="og:image" content="https://amiyapani.com/theme/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% block twitter_title %}{{ self.title() }}{% endblock %}" />
+  <meta name="twitter:description" content="{% block twitter_description %}{{ self.description() }}{% endblock %}" />
+  <meta name="twitter:image" content="https://amiyapani.com/theme/og-image.png" />
+
+  <link rel="canonical" href="{% block canonical %}https://amiyapani.com{% endblock %}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />

@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
 {% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.summary | striptags | truncate(160) }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_title %}{{ article.title }}{% endblock %}
+{% block og_description %}{{ article.summary | striptags | truncate(160) }}{% endblock %}
+{% block og_url %}https://amiyapani.com/{{ article.url }}{% endblock %}
+{% block twitter_title %}{{ article.title }}{% endblock %}
+{% block twitter_description %}{{ article.summary | striptags | truncate(160) }}{% endblock %}
+{% block canonical %}https://amiyapani.com/{{ article.url }}{% endblock %}
 
 {% block content %}
 <div class="article-wrapper">

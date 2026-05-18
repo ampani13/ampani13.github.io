@@ -48,5 +48,8 @@ DEFAULT_PAGINATION = 5
 RELATIVE_URLS = True
 
 STATIC_PATHS = ['images', 'extra']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
+EXTRA_PATH_METADATA = {
+    'extra/CNAME': {'path': 'CNAME'},
+    'extra/robots.txt': {'path': 'robots.txt'},
+}
 TEMPLATE_PAGES = {'404.html': '404.html'}
