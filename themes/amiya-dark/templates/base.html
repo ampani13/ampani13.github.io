@@ -18,14 +18,17 @@
       <a class="nav-brand" href="{{ SITEURL }}/">
         <span class="brand-text">amiya<span class="accent">.</span>dev</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-menu" id="navMenu">
         {% for title, url in MENUITEMS %}
         <li><a class="nav-link" href="{{ SITEURL }}{{ url }}">{{ title }}</a></li>
         {% endfor %}
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
