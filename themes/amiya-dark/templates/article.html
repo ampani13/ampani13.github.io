@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="article-wrapper">
+  <div class="article-header">
+    <p class="article-category">
+      <i class="fas fa-folder-open"></i> {{ article.category }}
+    </p>
+    <h1 class="article-title">{{ article.title }}</h1>
+    <div class="article-meta">
+      <span><i class="fas fa-calendar-alt"></i> {{ article.date.strftime('%B %d, %Y') }}</span>
+      <span><i class="fas fa-user"></i> {{ article.author }}</span>
+      {% if article.tags %}
+      <span>
+        <i class="fas fa-tags"></i>
+        {% for tag in article.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </div>
+  <div class="article-divider"></div>
+  <div class="article-content">
+    {{ article.content }}
+  </div>
+  <div class="article-divider"></div>
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a href="/blog.html" class="btn btn-outline">
+      <i class="fas fa-arrow-left"></i> Back to Blog
+    </a>
+    <div style="display:flex; gap: 12px;">
+      {% for name, url in SOCIAL %}
+      <a href="{{ url }}" class="social-link" target="_blank" rel="noopener">
+        <i class="fa{% if name in ['linkedin','github'] %}b{% else %}s{% endif %} fa-{{ name }}"></i>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

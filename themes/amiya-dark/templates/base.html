@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description" content="{{ SITESUBTITLE }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-brand" href="{{ SITEURL }}/">
+        <span class="brand-text">amiya<span class="accent">.</span>dev</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        {% for title, url in MENUITEMS %}
+        <li><a class="nav-link" href="{{ SITEURL }}{{ url }}">{{ title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="brand-text">amiya<span class="accent">.</span>dev</span>
+        <p>Data Engineer &amp; AI Specialist · Mumbai, India</p>
+      </div>
+      <div class="footer-social">
+        {% for name, url in SOCIAL %}
+        <a href="{{ url }}" class="social-link" target="_blank" rel="noopener" aria-label="{{ name }}">
+          <i class="fa{% if name == 'linkedin' %}b{% elif name == 'github' %}b{% else %}s{% endif %} fa-{{ name }}"></i>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="footer-right">
+        <p>&copy; {{ 2025 }} Amiya Pani · Built with <a href="https://getpelican.com" target="_blank">Pelican</a> &amp; Python</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ SITEURL }}/theme/js/main.js"></script>
+</body>
+</html>

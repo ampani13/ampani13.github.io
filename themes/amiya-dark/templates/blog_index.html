@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Blog — {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-label">// Writing</span>
+    <h1>Blog</h1>
+    <p>Thoughts on Data Engineering, AI, automation, and the tech I work with every day.</p>
+  </div>
+</div>
+<div class="container" style="padding-bottom: 80px;">
+  {% if articles %}
+  <div class="blog-grid">
+    {% for article in articles %}
+    <div class="blog-card slide-up" style="transition-delay: {{ loop.index0 * 0.08 }}s;">
+      <span class="blog-tag">{{ article.category }}</span>
+      <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+      <p>{{ article.summary | striptags | truncate(140) }}</p>
+      <div class="blog-meta">
+        <span class="blog-date"><i class="fas fa-calendar-alt" style="margin-right:5px;"></i>{{ article.date.strftime('%b %d, %Y') }}</span>
+        <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more →</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div style="text-align:center; padding: 80px 0;">
+    <i class="fas fa-pen-nib" style="font-size: 3rem; color: var(--text-dim); margin-bottom: 20px; display: block;"></i>
+    <h3 style="color: var(--text-muted); font-weight: 400;">No posts yet — stay tuned!</h3>
+    <p style="color: var(--text-dim); margin-top: 8px;">Posts will appear here once published.</p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

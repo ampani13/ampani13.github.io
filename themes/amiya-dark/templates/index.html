@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Amiya Pani — Data Engineer & AI Specialist{% endblock %}
+
+{% block content %}
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content" style="animation: fadeInUp 0.8s ease both;">
+      <span class="hero-label">Available for opportunities</span>
+      <h1 class="hero-name gradient-text">Amiya Pani</h1>
+      <div class="hero-typed">
+        <span id="typed-text"></span><span class="cursor"></span>
+      </div>
+      <p class="hero-desc">
+        Seasoned IT professional with <strong>8+ years</strong> of expertise across
+        Data Engineering, AI/ML, GenAI, Robotic Process Automation, and full-stack
+        intelligent solutions. Based in Mumbai, India.
+      </p>
+      <div class="hero-actions">
+        <a href="/pages/experience.html" class="btn btn-primary">
+          <i class="fas fa-briefcase"></i> View Experience
+        </a>
+        <a href="/pages/contact.html" class="btn btn-outline">
+          <i class="fas fa-envelope"></i> Get in Touch
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="number">8+</span><span class="label">Years Exp</span></div>
+        <div class="hero-stat"><span class="number">5+</span><span class="label">Companies</span></div>
+        <div class="hero-stat"><span class="number">10+</span><span class="label">Certifications</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" style="animation: fadeIn 1.2s ease 0.3s both;">
+      <div class="hero-card">
+        <div class="hc-header">
+          <span class="hc-dot"></span><span class="hc-dot"></span><span class="hc-dot"></span>
+          <span class="hc-title">amiya_pani.py</span>
+        </div>
+        <div class="hc-code">
+          <span class="cm"># Data Engineer & AI Specialist</span><br/>
+          <span class="kw">class</span> <span class="fn">AmiyaPani</span>:<br/>
+          &nbsp;&nbsp;role = <span class="str">"Lead Analyst"</span><br/>
+          &nbsp;&nbsp;company = <span class="str">"Crisil Ltd"</span><br/>
+          &nbsp;&nbsp;exp = <span class="num">8</span> <span class="cm"># years</span><br/><br/>
+          &nbsp;&nbsp;skills = [<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Python"</span>, <span class="str">"GenAI"</span>,<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"PySpark"</span>, <span class="str">"ETL"</span>,<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Databricks"</span>, <span class="str">"NLP"</span><br/>
+          &nbsp;&nbsp;]<br/><br/>
+          &nbsp;&nbsp;<span class="kw">def</span> <span class="fn">solve</span>(self, problem):<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"AI + Data"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED SKILLS ===== -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header slide-up">
+      <span class="section-label">What I Do</span>
+      <h2 class="section-title">Core Expertise</h2>
+      <div class="section-line"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;">
+      {% set expertise = [
+        ("fa-database", "Data Engineering", "ETL pipelines, AWS Glue, Databricks, Azure Synapse, Snowflake"),
+        ("fa-brain", "AI / ML / GenAI", "Machine Learning, Deep Learning, OpenAI, LLMs, NLP"),
+        ("fa-robot", "RPA & Automation", "UiPath, Power Automate, Alteryx, Python automation"),
+        ("fa-chart-line", "BI & Analytics", "Tableau, Power BI, Kibana, Spotfire, dashboard design"),
+        ("fa-spider", "Data Scraping", "Selenium, BeautifulSoup, automated crawlers, pipelines"),
+        ("fa-comments", "Chatbot / ConvAI", "AWS Lex, MS Bot Framework, LUIS, QnA Maker")
+      ] %}
+      {% for icon, title, desc in expertise %}
+      <div class="skill-category slide-up" style="transition-delay: {{ loop.index0 * 0.08 }}s;">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas {{ icon }}"></i></div>
+          <h3 class="skill-cat-title">{{ title }}</h3>
+        </div>
+        <p style="font-size:0.83rem; color: var(--text-muted); line-height: 1.6;">{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===== RECENT EXPERIENCE SNAPSHOT ===== -->
+<section class="section" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header slide-up">
+      <span class="section-label">Career</span>
+      <h2 class="section-title">Recent Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div style="display: grid; gap: 16px; max-width: 800px; margin: 0 auto;">
+      {% set companies = [
+        ("Lead Analyst", "Crisil Limited", "Oct 2022 – Present", "fa-building"),
+        ("Senior Software Engineer", "ACL Digital", "Apr 2022 – Oct 2022", "fa-laptop-code"),
+        ("AI Lead Engineer", "Healthmeter Services Pvt. Ltd.", "Apr 2021 – Apr 2022", "fa-heartbeat"),
+        ("Project Manager, Intelligent Automation", "JP Morgan Chase & Co", "Apr 2020 – Apr 2021", "fa-university"),
+        ("Associate Consultant", "Capgemini", "Jan 2017 – Apr 2020", "fa-code-branch")
+      ] %}
+      {% for role, company, period, icon in companies %}
+      <div class="achievement-item slide-up" style="transition-delay: {{ loop.index0 * 0.08 }}s;">
+        <i class="fas {{ icon }}" style="color: var(--accent-cyan);"></i>
+        <div style="flex: 1;">
+          <span style="font-weight: 600; font-size: 0.95rem;">{{ role }}</span>
+          <span style="color: var(--accent-cyan); margin: 0 8px;">·</span>
+          <span style="color: var(--text-muted); font-size: 0.9rem;">{{ company }}</span>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); white-space: nowrap;">{{ period }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="/pages/experience.html" class="btn btn-outline">
+        Full Experience <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LATEST BLOG POSTS ===== -->
+{% if articles %}
+<section class="section">
+  <div class="container">
+    <div class="section-header slide-up">
+      <span class="section-label">Writing</span>
+      <h2 class="section-title">Latest Posts</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="blog-grid">
+      {% for article in articles[:3] %}
+      <div class="blog-card slide-up" style="transition-delay: {{ loop.index0 * 0.1 }}s;">
+        <span class="blog-tag">{{ article.category }}</span>
+        <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+        <p>{{ article.summary | striptags | truncate(120) }}</p>
+        <div class="blog-meta">
+          <span class="blog-date"><i class="fas fa-calendar-alt" style="margin-right:5px;"></i>{{ article.date.strftime('%b %d, %Y') }}</span>
+          <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="/blog.html" class="btn btn-outline">All Posts <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}
