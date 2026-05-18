@@ -47,6 +47,6 @@ ARTICLE_SAVE_AS = 'blog/{slug}.html'
 DEFAULT_PAGINATION = 5
 RELATIVE_URLS = True
 
-STATIC_PATHS = ['images']
-
+STATIC_PATHS = ['images', 'extra']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
 TEMPLATE_PAGES = {'404.html': '404.html'}
