@@ -48,3 +48,5 @@ DEFAULT_PAGINATION = 5
 RELATIVE_URLS = True
 
 STATIC_PATHS = ['images']
+
+TEMPLATE_PAGES = {'404.html': '404.html'}
